@@ -4,6 +4,8 @@ import com.exampleproject.MovieReservationSystem.dto.MovieDTO;
 import com.exampleproject.MovieReservationSystem.model.Movie;
 import com.exampleproject.MovieReservationSystem.service.IMovieService;
 import com.exampleproject.MovieReservationSystem.service.MovieService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,7 @@ public class MovieController {
     }
 
     @PostMapping()
+
     public ResponseEntity<Movie> addMovie(@Valid @RequestBody MovieDTO movieDTO){
         Movie movie =  movieService.saveMovie(movieDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(movie);

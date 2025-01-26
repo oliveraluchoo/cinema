@@ -7,6 +7,8 @@ import com.exampleproject.MovieReservationSystem.service.BookingService;
 import com.exampleproject.MovieReservationSystem.service.IBookingService;
 import com.exampleproject.MovieReservationSystem.service.IScreeningService;
 import com.exampleproject.MovieReservationSystem.service.ScreeningService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

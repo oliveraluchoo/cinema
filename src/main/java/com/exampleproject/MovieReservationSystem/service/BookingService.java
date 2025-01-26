@@ -19,7 +19,6 @@ public class BookingService implements IBookingService{
 
     @Override
     public Booking saveBooking(BookingDTO bookingDTO) {
-        System.out.println(bookingDTO.getScreeningId());
         Screening screening = screeningRepo.findById(bookingDTO.getScreeningId()).orElseThrow(() -> new IllegalArgumentException("There's no screening wit the ID: " + bookingDTO.getScreeningId()));
         if (screening.getAvailableSeats() - bookingDTO.getNumberOfSeats() < 0){
             throw new IllegalArgumentException("The number of seats must be less than or equal to: " + screening.getAvailableSeats());
